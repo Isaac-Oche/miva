@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Savage Stitch | Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Savage Stitch</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="board.html">Board</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Marquee -->
+  <marquee class="marquee">🔥 Explore the Savage Collection – Limited Drops Weekly | Shop Bold. Shop Savage. 🔥</marquee>
+
+  <!-- Product Filter -->
+  <section class="filter-bar">
+    <label>Filter by Category:</label>
+    <select id="productFilter">
+      <option value="all">All</option>
+      <option value="mens">Men’s</option>
+      <option value="womens">Women’s</option>
+      <option value="footwear">Footwear</option>
+      <option value="accessories">Accessories</option>
+    </select>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="product-grid" id="productGrid">
+    <div class="product-card mens">
+      <img src="images/jacket.jpg" alt="Men's Jacket">
+      <h3>Leather Bomber Jacket</h3>
+      <p>₦75,000</p>
+    </div>
+
+    <div class="product-card womens">
+      <img src="images/dress.jpg" alt="Women's Dress">
+      <h3>Cutout Mesh Dress</h3>
+      <p>₦62,000</p>
+    </div>
+
+    <div class="product-card footwear">
+      <img src="images/sneakers.jpg" alt="Sneakers">
+      <h3>Graffiti High-Top Sneakers</h3>
+      <p>₦49,000</p>
+    </div>
+
+    <div class="product-card accessories">
+      <img src="images/bag.jpg" alt="Bag">
+      <h3>Studded Mini Bag</h3>
+      <p>₦38,000</p>
+    </div>
+  </section>
+
+  <script>
+    const filter = document.getElementById('productFilter');
+    const cards = document.querySelectorAll('.product-card');
+
+    filter.addEventListener('change', function () {
+      const value = this.value;
+      cards.forEach(card => {
+        if (value === 'all' || card.classList.contains(value)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

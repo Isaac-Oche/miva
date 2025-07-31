@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Savage Stitch | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Savage Stitch</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="board.html">Board</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="inquiries.html">Inquiries</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Savage Stitch</h1>
+    <p>Where bold meets couture. Discover your edge.</p>
+    <button onclick="window.location.href='products.html'">Explore Collection</button>
+  </section>
+
+  <!-- Marquee Section -->
+  <marquee class="marquee">🔥 Savage Stitch Summer Drop Coming Soon | Stay Stylish, Stay Savage 🔥</marquee>
+
+  <!-- JavaScript Feature: Show Alert on Button Click -->
+  <script>
+    const heroBtn = document.querySelector("button");
+    heroBtn.addEventListener("click", () => {
+      alert("Redirecting to our fashion collection...");
+    });
+  </script>
+</body>
+</html>
