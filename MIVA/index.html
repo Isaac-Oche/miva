@@ -11,7 +11,12 @@
   <header>
     <nav class="navbar">
       <div class="logo">Savage Stitch</div>
-      <ul class="nav-links">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="products.html">Products</a></li>
@@ -36,12 +41,41 @@
   <!-- Marquee Section -->
   <marquee class="marquee">🔥 Savage Stitch Summer Drop Coming Soon | Stay Stylish, Stay Savage 🔥</marquee>
 
-  <!-- JavaScript Feature: Show Alert on Button Click -->
+  <!-- JavaScript Features -->
   <script>
-    const heroBtn = document.querySelector("button");
-    heroBtn.addEventListener("click", () => {
-      alert("Redirecting to our fashion collection...");
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
+    
+    // Close mobile menu when clicking on a link
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+    
+    // Hero button alert (only for hero section button)
+    const heroBtn = document.querySelector(".hero button");
+    if (heroBtn) {
+      heroBtn.addEventListener("click", () => {
+        alert("Redirecting to our fashion collection...");
+      });
+    }
   </script>
 </body>
 </html>
